@@ -1,0 +1,16 @@
+{
+  "id": "mig_cka3f4mabae799o28lhg",
+  "parentID": "mig_cka3eneabae799o28lgg",
+  "checksum": "1:d590eb21accab2f78731f792c62aec99ac1a37136008c430d2c0764ab9dbe018",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Date",
+          "type": "datetime"
+        },
+        "table": "MangaChapter"
+      }
+    }
+  ]
+}

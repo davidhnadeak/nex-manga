@@ -1,0 +1,16 @@
+{
+  "id": "mig_cka3lk6abae799o28m5g",
+  "parentID": "mig_cka3giquii7sgik00k7g",
+  "checksum": "1:b9b014ce06f8e9cd7febe71715b39ce38a0a8dd6766a4e661486c4181a3956dc",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "cover",
+          "type": "file"
+        },
+        "table": "Manga"
+      }
+    }
+  ]
+}

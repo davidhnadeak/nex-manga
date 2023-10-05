@@ -1,0 +1,39 @@
+---
+import LayoutChapter from "../../layouts/LayoutChapter.astro";
+import "../../styles/css/pages-chapters-[title].css";
+
+import { XataClient } from "../../xata";
+
+export async function getStaticPaths() {
+  // Chapter
+
+  const xata = new XataClient({
+    apiKey: import.meta.env.XATA_API_KEY,
+    branch: import.meta.env.XATA_BRANCH,
+  });
+  const Chapter = await xata.db.Chapter.getAll();
+
+  const routes = Chapter.map(({ title, file }) => {
+    return {
+      params: { title },
+      props: { title, file },
+    };
+  });
+
+  return routes;
+}
+
+const Chapter = Astro.props;
+---
+
+<LayoutChapter title={Chapter.title}>
+  <div class="container-chapter">
+    <img src={Chapter.file.url} alt={Chapter.title} />
+  </div>
+</LayoutChapter>
+
+<style>
+  * {
+    /* border: 1px solid aqua; */
+  }
+</style>

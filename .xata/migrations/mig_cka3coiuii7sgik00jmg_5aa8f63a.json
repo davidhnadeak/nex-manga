@@ -1,0 +1,16 @@
+{
+  "id": "mig_cka3coiuii7sgik00jmg",
+  "parentID": "mig_cka3ciauii7sgik00jig",
+  "checksum": "1:5aa8f63a8cb230aecb8cfae7a9da7eed9d82d8348fd0056366aab614cd601fe8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "synopsis",
+          "type": "text"
+        },
+        "table": "Manga"
+      }
+    }
+  ]
+}

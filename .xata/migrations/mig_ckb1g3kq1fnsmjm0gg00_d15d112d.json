@@ -1,0 +1,14 @@
+{
+  "id": "mig_ckb1g3kq1fnsmjm0gg00",
+  "parentID": "mig_ckb18vlq5jsecgi6dm0g",
+  "checksum": "1:d15d112d35d1ae41948a4880ae38d8767d6c3092bc95825977363282b8ef87d4",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "Manga",
+        "oldName": "Manga_id",
+        "table": "MangaChapter"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "mig_ckb18vlq5jsecgi6dm0g",
+  "parentID": "mig_ckai6h6abae799o2an50",
+  "checksum": "1:d0d5c9bc78e3424d1d584b59a4ac2c4c4465d44b5f9569b848227b661cc12f40",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "MangaChapter_id",
+          "type": "link",
+          "link": {
+            "table": "MangaChapter"
+          },
+          "unique": true
+        },
+        "table": "Manga"
+      }
+    }
+  ]
+}

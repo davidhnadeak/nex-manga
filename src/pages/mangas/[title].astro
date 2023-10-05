@@ -1,0 +1,84 @@
+---
+import LayoutManga from "../../layouts/LayoutManga.astro";
+import "../../styles/css/pages-mangas-[title].css";
+
+import { XataClient } from "../../xata";
+
+export async function getStaticPaths() {
+  // Manga
+  const xata = new XataClient({
+    apiKey: import.meta.env.XATA_API_KEY,
+    branch: import.meta.env.XATA_BRANCH,
+  });
+  const Manga = await xata.db.Manga.getAll();
+
+  const routes = Manga.map(({ id, title, cover, author, synopsis, genres }) => {
+    return {
+      params: { title },
+      props: { id, title, cover, author, synopsis, genres },
+    };
+  });
+
+  return routes;
+}
+
+const Manga = Astro.props;
+
+// Chapter
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+
+const Chapter = await xata.db.Chapter.filter({
+  Manga: Manga.id,
+}).getMany();
+---
+
+<LayoutManga title={Manga.title}>
+  <div class="container-manga">
+    <img src={Manga.cover.url} alt={Manga.title} />
+
+    <h1>{Manga.title}</h1>
+
+    <!-- <table>
+      <tr>
+        <td>Genre</td>
+        <td style="padding-right: 5px;">:</td>
+        <td class="container-genres"
+          >{Manga.genres.map((genre) => <p class="genre">{genre}</p>)}</td
+        >
+      </tr>
+      <tr>
+        <td>Penulis</td>
+        <td>:</td>
+        <td><b>{Manga.author}</b></td>
+      </tr>
+    </table> -->
+
+    <p>Sinopsis</p>
+    <p class="synopsis">{Manga.synopsis}</p>
+
+    <div class="container-chapter">
+      {
+        Chapter.map((records) => (
+          <a href={`/chapters/${records.title}`}>
+            <p>
+              {records.number}. {records.title}
+            </p>
+            <p class="container-column-publishdate">
+              <span>{records.volume}</span>
+              <span>{records.publishdate.toLocaleDateString()}</span>
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</LayoutManga>
+
+<style>
+  * {
+    /* border: 1px solid aqua; */
+  }
+</style>

@@ -1,0 +1,12 @@
+{
+  "id": "mig_ckai6h6abae799o2an50",
+  "parentID": "mig_ckai3pauii7sgik02l50",
+  "checksum": "1:81f1a4865cfe0918e30f282bd85cc698f81b719cb90d209d2f9e55fa9652a98e",
+  "operations": [
+    {
+      "removeTable": {
+        "table": "Genre"
+      }
+    }
+  ]
+}

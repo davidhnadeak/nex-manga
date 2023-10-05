@@ -1,0 +1,14 @@
+{
+  "id": "mig_ckb1he275m39jh0poik0",
+  "parentID": "mig_ckb1g7sq1fnsmjm0gg10",
+  "checksum": "1:7dc0da749fade0f7e20e6a0cc0cba7fdb4748db2d31512e61c78fd4e1ecdf5bf",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "User",
+        "oldName": "User_id",
+        "table": "Bookmark"
+      }
+    }
+  ]
+}

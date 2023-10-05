@@ -1,0 +1,30 @@
+---
+import "../styles/css/layouts-Layout.css";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="container-Layout">
+      <h1>{title}</h1>
+      <div class="container-slot">
+        <slot />
+      </div>
+      <div class="components-Navbar"></div>
+    </div>
+  </body>
+</html>
+
+<style>
+  * {
+    /* border: 1px solid white; */
+  }
+</style>

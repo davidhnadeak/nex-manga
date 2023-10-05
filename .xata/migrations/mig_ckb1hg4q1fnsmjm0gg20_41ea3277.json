@@ -1,0 +1,14 @@
+{
+  "id": "mig_ckb1hg4q1fnsmjm0gg20",
+  "parentID": "mig_ckb1he275m39jh0poik0",
+  "checksum": "1:41ea3277f750999b19bf94c760985a8d42cab380acb6ea330adbfc052cb10863",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "Manga",
+        "oldName": "Manga_id",
+        "table": "Bookmark"
+      }
+    }
+  ]
+}

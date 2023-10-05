@@ -1,0 +1,78 @@
+$text: #d2f1f9;
+$background: #010405;
+$primary: #1ba8d0;
+$secondary: #052129;
+$accent: #1db3dd;
+
+.container-MangaCollection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+
+    input[type="text"],
+    select,
+    input[type="submit"] {
+      font-size: medium;
+      border-radius: 7px;
+    }
+
+    input[type="text"],
+    select {
+      width: 50%;
+      text-indent: 5px;
+      border: 2px solid $background;
+      box-shadow: 5px 5px $accent;
+    }
+
+    input[type="submit"] {
+      width: 30%;
+      padding: 5px 0px 5px 0px;
+      font-weight: bold;
+      text-align: center;
+      color: white;
+      background-color: $accent;
+      border: 2px solid $background;
+      box-shadow: 5px 5px white;
+    }
+
+    input[type="submit"]:hover {
+      cursor: pointer;
+    }
+
+    input[type="submit"]:active {
+      box-shadow: 0px 0px;
+      transform: translate(5px, 5px);
+    }
+  }
+
+  .components-MangaCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container-MangaCollection {
+    
+    form {
+      width: 50%;
+
+      input[type="submit"] {
+        width: 20%;
+      }
+    }
+  }
+}

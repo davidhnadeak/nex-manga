@@ -1,0 +1,16 @@
+{
+  "id": "mig_ckem7i3gnj3bm0isroi0",
+  "parentID": "mig_ckem7270vjkl0s3lrcjg",
+  "checksum": "1:d21cc17f3b405a69aea7980147edaa4bf9470549ed52d71fe8f9d26b90494599",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "publishdate",
+          "type": "datetime"
+        },
+        "table": "Chapter"
+      }
+    }
+  ]
+}

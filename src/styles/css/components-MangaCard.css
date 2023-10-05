@@ -1,0 +1,56 @@
+.container-MangaCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 47%;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: #d2f1f9;
+  background-color: #052129;
+  border: 2px solid #1db3dd;
+  border-radius: 10px;
+  box-shadow: 5px 5px #1db3dd;
+}
+.container-MangaCard img,
+.container-MangaCard h3,
+.container-MangaCard .container-genres {
+  width: 85%;
+}
+.container-MangaCard img {
+  border: 2px solid #1db3dd;
+  border-radius: 5px;
+}
+.container-MangaCard h3 {
+  margin: 5px 0px 5px 0px;
+  text-align: center;
+}
+.container-MangaCard .container-genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.container-MangaCard .container-genres span {
+  padding: 0px 5px 0px 5px;
+  font-size: small;
+  font-weight: bold;
+  color: #052129;
+  background-color: #1db3dd;
+  border-radius: 5px;
+}
+
+.container-MangaCard:hover {
+  cursor: pointer;
+}
+
+.container-MangaCard:active {
+  box-shadow: 0px 0px;
+  transform: translate(5px, 5px);
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container-MangaCard {
+    width: 15%;
+  }
+}/*# sourceMappingURL=components-MangaCard.css.map */

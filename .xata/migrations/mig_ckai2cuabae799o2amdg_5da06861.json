@@ -1,0 +1,13 @@
+{
+  "id": "mig_ckai2cuabae799o2amdg",
+  "parentID": "mig_ckai1vuabae799o2amcg",
+  "checksum": "1:5da06861c357f415903a5e8526d09b4922ba4b14607e29451fea0d93307d4067",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "genres",
+        "table": "Genre"
+      }
+    }
+  ]
+}

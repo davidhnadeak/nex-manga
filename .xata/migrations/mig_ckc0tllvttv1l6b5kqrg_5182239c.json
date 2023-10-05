@@ -1,0 +1,13 @@
+{
+  "id": "mig_ckc0tllvttv1l6b5kqrg",
+  "parentID": "mig_ckb1jpq75m39jh0pojag",
+  "checksum": "1:5182239ce131f2e480b78482e1d520b447f72d415a1061fae1f5d325c8ecf6ca",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "MangaChapter",
+        "table": "Manga"
+      }
+    }
+  ]
+}

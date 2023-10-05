@@ -1,0 +1,12 @@
+{
+  "id": "mig_cka3c56abae799o28kg0",
+  "parentID": "mig_cka3bu6abae799o28keg",
+  "checksum": "1:f3e14ebbb66d30619033110a1beec2e2492211956817f3a4796d1c08760397a4",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Manga"
+      }
+    }
+  ]
+}

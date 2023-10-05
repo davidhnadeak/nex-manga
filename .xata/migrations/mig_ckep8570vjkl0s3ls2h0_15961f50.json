@@ -1,0 +1,19 @@
+{
+  "id": "mig_ckep8570vjkl0s3ls2h0",
+  "parentID": "mig_ckep7v6ngvghfvu49lk0",
+  "checksum": "1:15961f50623ddd2eb7cb845442dfe9869f7f5da08565a1168b7711ddf2cc5296",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Chapter",
+          "type": "link",
+          "link": {
+            "table": "Chapter"
+          }
+        },
+        "table": "Manga"
+      }
+    }
+  ]
+}

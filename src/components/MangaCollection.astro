@@ -1,0 +1,91 @@
+---
+import MangaCard from "./MangaCard.astro";
+import "../styles/css/components-MangaCollection.css";
+
+import { XataClient } from "../xata";
+
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+
+const search = Astro.url.searchParams.get("search")! || "";
+const genre = Astro.url.searchParams.get("genre")! || "";
+
+let Manga = null;
+
+if (search) {
+  // Manga = await xata.db.Manga.search(search, { fuzziness: 2 });
+
+  Manga = await xata.db.Manga.filter({
+    title: search,
+  }).getMany();
+} else if (genre) {
+  Manga = await xata.db.Manga.filter({
+    genres: {
+      $includes: [`${genre}`],
+    },
+  }).getMany();
+} else {
+  Manga = await xata.db.Manga.getAll();
+}
+
+const MangaGenres = await xata.db.Manga.getAll();
+const unique_genres = new Set();
+MangaGenres.forEach((record) => {
+  record.genres.forEach((genre) => {
+    unique_genres.add(genre);
+  });
+});
+---
+
+<div class="container-MangaCollection">
+  <form action="/">
+    <input type="text" name="search" value={search} placeholder="Pilih Judul" required />
+    <input type="submit" value="Cari Judul" />
+  </form>
+
+  <form action="/">
+    <select name="genre" required>
+      <option value="">Pilih Genre</option>
+      {
+        [...unique_genres].map((genre) => (
+          <option value={`${genre}`}>{genre}</option>
+        ))
+      }
+      <input type="submit" value="Cari Genre" />
+    </select>
+  </form>
+
+  {
+    genre && (
+      <p style="margin: 10px 0px 10px 0px;">Manga dengan genre {genre}</p>
+    )
+  }
+
+  {
+    Manga.length === 0 && (
+      <h3 style="margin: 10px 0px 10px 0px;">TIdak dapat menemukan Manga</h3>
+    )
+  }
+
+  <div class="components-MangaCard">
+    {
+      Manga.map((records) => (
+        <MangaCard
+          id={records.id}
+          img_src={records.cover.url}
+          img_alt={records.title}
+          title={records.title}
+          genres={records.genres}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  * {
+    /* border: 1px solid yellow; */
+  }
+</style>

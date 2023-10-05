@@ -1,0 +1,19 @@
+---
+import "../styles/css/components-MangaCard.css";
+
+const { id, img_src, img_alt, title, genres } = Astro.props;
+---
+
+<a href={`/mangas/${title}`} class="container-MangaCard">
+  <img src={img_src} alt={img_alt} />
+  <h3>{title}</h3>
+  <!-- <div class="container-genres">
+    {genres.map((genre) => <span>{genre}</span>)}
+  </div> -->
+</a>
+
+<style>
+  * {
+    /* border: 1px solid yellow; */
+  }
+</style>

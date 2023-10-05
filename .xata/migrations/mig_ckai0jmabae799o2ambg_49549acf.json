@@ -1,0 +1,17 @@
+{
+  "id": "mig_ckai0jmabae799o2ambg",
+  "parentID": "mig_ckai08evnfacv028t3vg",
+  "checksum": "1:49549acf3aa59b1975555eff7b4e3123a521d4750c8a98fba7999f936e814667",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "genre",
+          "type": "string",
+          "unique": true
+        },
+        "table": "Genre"
+      }
+    }
+  ]
+}

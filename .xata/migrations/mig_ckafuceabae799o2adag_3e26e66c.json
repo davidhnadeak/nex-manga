@@ -1,0 +1,14 @@
+{
+  "id": "mig_ckafuceabae799o2adag",
+  "parentID": "mig_cka3m32uii7sgik00kt0",
+  "checksum": "1:3e26e66cc616c519566efbfb030f5a8c655a0485a9acd7477b790fafbb6b1a66",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "genres",
+        "oldName": "genre",
+        "table": "Manga"
+      }
+    }
+  ]
+}

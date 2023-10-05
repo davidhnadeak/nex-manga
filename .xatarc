@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://David-s-workspace-6uttk1.ap-southeast-2.xata.sh/db/nex-manga",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

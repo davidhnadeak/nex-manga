@@ -1,0 +1,19 @@
+{
+  "id": "mig_cka3g5mabae799o28lk0",
+  "parentID": "mig_cka3fsiuii7sgik00k6g",
+  "checksum": "1:a73f709fda8751d5ce82ffce14393ae4a2f3a8b2e9f1892c9af1270ee7b110ca",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "User_id",
+          "type": "link",
+          "link": {
+            "table": "User"
+          }
+        },
+        "table": "Bookmark"
+      }
+    }
+  ]
+}

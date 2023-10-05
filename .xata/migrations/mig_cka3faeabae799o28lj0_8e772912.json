@@ -1,0 +1,12 @@
+{
+  "id": "mig_cka3faeabae799o28lj0",
+  "parentID": "mig_cka3f4mabae799o28lhg",
+  "checksum": "1:8e772912c4e6410d4570e3cf9acd35eea31b58e2cf521ce8e07d97d47a923e70",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Bookmark"
+      }
+    }
+  ]
+}

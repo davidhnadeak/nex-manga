@@ -1,0 +1,16 @@
+{
+  "id": "mig_cka3ciauii7sgik00jig",
+  "parentID": "mig_cka3cd2uii7sgik00je0",
+  "checksum": "1:65d33a69660acf33ddb60e9b921cbcfe407de3059a7153284beeab914083bb1e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "author",
+          "type": "string"
+        },
+        "table": "Manga"
+      }
+    }
+  ]
+}
