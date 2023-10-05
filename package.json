@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/vercel": "^5.0.1",
     "@xata.io/client": "^0.26.6",
     "astro": "^3.2.0"
   }
