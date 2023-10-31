@@ -14,6 +14,7 @@ const tables = [
       { name: "email", type: "string", unique: true },
       { name: "password", type: "string" },
     ],
+    revLinks: [{ column: "User", table: "Favorite" }],
   },
   {
     name: "Manga",
@@ -25,7 +26,10 @@ const tables = [
       { name: "cover", type: "file" },
       { name: "Chapter", type: "link", link: { table: "Chapter" } },
     ],
-    revLinks: [{ column: "Manga", table: "Chapter" }],
+    revLinks: [
+      { column: "Manga", table: "Chapter" },
+      { column: "Manga", table: "Favorite" },
+    ],
   },
   {
     name: "Chapter",
@@ -38,6 +42,13 @@ const tables = [
       { name: "Manga", type: "link", link: { table: "Manga" } },
     ],
     revLinks: [{ column: "Chapter", table: "Manga" }],
+  },
+  {
+    name: "Favorite",
+    columns: [
+      { name: "User", type: "link", link: { table: "User" } },
+      { name: "Manga", type: "link", link: { table: "Manga" } },
+    ],
   },
 ] as const;
 
@@ -53,10 +64,14 @@ export type MangaRecord = Manga & XataRecord;
 export type Chapter = InferredTypes["Chapter"];
 export type ChapterRecord = Chapter & XataRecord;
 
+export type Favorite = InferredTypes["Favorite"];
+export type FavoriteRecord = Favorite & XataRecord;
+
 export type DatabaseSchema = {
   User: UserRecord;
   Manga: MangaRecord;
   Chapter: ChapterRecord;
+  Favorite: FavoriteRecord;
 };
 
 const DatabaseClient = buildClient();

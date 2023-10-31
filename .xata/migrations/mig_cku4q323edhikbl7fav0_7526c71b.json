@@ -1,0 +1,19 @@
+{
+  "id": "mig_cku4q323edhikbl7fav0",
+  "parentID": "mig_cku4pv23edhikbl7far0",
+  "checksum": "1:7526c71b61b24eb9d5ee625cb9a04dbb084a6ea1d2cd9fba0015ca0df95ce20a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Manga",
+          "type": "link",
+          "link": {
+            "table": "Manga"
+          }
+        },
+        "table": "Bookmark"
+      }
+    }
+  ]
+}

@@ -10,7 +10,7 @@
   background-color: #1db3dd;
   border: 2px solid #010304;
   border-radius: 5px;
-  box-shadow: 5px 5px white;
+  box-shadow: 5px 5px #d2f1f9;
 }
 
 .container-ButtonBack:hover {
@@ -20,4 +20,4 @@
 .container-ButtonBack:active {
   box-shadow: 0px 0px;
   transform: translate(5px, 5px);
-}/*# sourceMappingURL=components-BackButton.css.map */
+}/*# sourceMappingURL=components-ButtonBack.css.map */

@@ -16,7 +16,7 @@ $accent: #1db3dd;
   background-color: $accent;
   border: 2px solid $background;
   border-radius: 5px;
-  box-shadow: 5px 5px white;
+  box-shadow: 5px 5px $text;
 }
 
 .container-ButtonBack:hover {

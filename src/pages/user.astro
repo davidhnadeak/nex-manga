@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Service from "../components/Service.astro";
+import "../styles/css/pages-user.css";
+
+/* CHECK CURRENT SESSION */
+if (!Astro.cookies.has("session")) {
+  return Astro.redirect("/login/");
+}
+
+// GET USERNAME FROM COOKIES SESSION
+const session_cookies = Astro.cookies.get("session").value;
+const session = JSON.parse(session_cookies);
+const username = session.username;
+---
+
+<Layout title="User">
+  <div class="container-user">
+    <div class="username-logout-container">
+      <h2>
+        Welcome Home,
+        <br /><span>{username}</span>
+      </h2>
+      <a href="/api/logout" class="btn-logout">
+        <h3>Logout</h3>
+      </a>
+    </div>
+    <div class="components-Service">
+      <Service
+        img_src="/images/discover.svg"
+        img_alt="Discover"
+        text="Temukan manga yang populer"
+      />
+      <Service
+        img_src="/images/search.svg"
+        img_alt="Search"
+        text="Search Engine yang telah dioptimalisasi jika Anda melakukan typo"
+      />
+      <Service
+        img_src="/images/security.svg"
+        img_alt="Security"
+        text="Data Anda aman bersama kami"
+      />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  * {
+    /* border: 1px solid aqua; */
+  }
+</style>

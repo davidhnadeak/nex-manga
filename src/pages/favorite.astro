@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MangaCard from "../components/MangaCard.astro";
+import Service from "../components/Service.astro";
+import "../styles/css/pages-favorite.css";
+import { XataClient } from "../xata";
+
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+
+/* CHECK CURRENT SESSION */
+if (!Astro.cookies.has("session")) {
+  return Astro.redirect("/login/");
+}
+
+// GET ID FROM COOKIES SESSION
+const session_cookies = Astro.cookies.get("session").value;
+const session = JSON.parse(session_cookies);
+const user_id = session.id;
+
+const FavoriteManga = await xata.db.Favorite.filter({
+  User: {
+    id: user_id,
+  },
+}).getMany();
+---
+
+<Layout title="Manga Favorit">
+  <div class="container-favorite">
+    {
+      FavoriteManga.length === 0 && (
+        <div class="components-Service">
+          <Service
+            img_src="/images/favorite.svg"
+            img_alt="Favorite"
+            text="Anda belum menyimpan satupun manga"
+          />
+        </div>
+      )
+    }
+
+    <div class="components-MangaCard">
+      {FavoriteManga.map((records) => <MangaCard id={records.Manga.id} />)}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  * {
+    /* border: 1px solid aqua; */
+  }
+</style>

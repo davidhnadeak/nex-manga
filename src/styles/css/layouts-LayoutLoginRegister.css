@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  color: #d2f1f9;
+  background-color: #010405;
+}
+
+.container-LayoutLoginRegister {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin-top: 100px;
+}
+.container-LayoutLoginRegister h1 {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: #052129;
+  border: 2px solid #1db3dd;
+  border-radius: 10px;
+  box-shadow: 5px 5px #1db3dd;
+}
+.container-LayoutLoginRegister .container-slot {
+  width: 100%;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container-LayoutLoginRegister {
+    width: 25%;
+  }
+}/*# sourceMappingURL=layouts-LayoutLoginRegister.css.map */

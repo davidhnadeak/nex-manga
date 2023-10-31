@@ -1,0 +1,19 @@
+{
+  "id": "mig_cku4pv23edhikbl7far0",
+  "parentID": "mig_cku4plh0dnbcfnr7oa30",
+  "checksum": "1:67626138254fcf31ab2507ad7c358f34e08af7b993edd870d326c7ff5368ab6a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "User",
+          "type": "link",
+          "link": {
+            "table": "User"
+          }
+        },
+        "table": "Bookmark"
+      }
+    }
+  ]
+}

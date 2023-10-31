@@ -6,7 +6,7 @@
 }
 .container-index .reset {
   align-self: flex-end;
-  margin: 20px 0px 20px 0px;
+  margin: 0px 0px 20px 0px;
   padding: 5px 10px 5px 10px;
   font-weight: bold;
   text-decoration: none;
@@ -14,7 +14,7 @@
   background-color: #1db3dd;
   border: 2px solid #010405;
   border-radius: 7px;
-  box-shadow: 5px 5px white;
+  box-shadow: 5px 5px #d2f1f9;
 }
 .container-index .reset:hover {
   cursor: pointer;

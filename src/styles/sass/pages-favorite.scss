@@ -1,0 +1,38 @@
+$text: #d2f1f9;
+$background: #010405;
+$primary: #1ba8d0;
+$secondary: #052129;
+$accent: #1db3dd;
+
+.container-favorite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .components-Service {
+    width: 100%;
+  }
+
+  .components-MangaCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 150px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container-favorite {
+
+    .components-Service {
+      width: 50%;
+    }
+
+    .components-MangaCard {
+      justify-content: start;
+    }
+  }
+}

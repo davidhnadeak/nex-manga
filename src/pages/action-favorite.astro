@@ -1,0 +1,34 @@
+---
+import { XataClient } from "../xata";
+
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+
+const url = Astro.url;
+const Manga_id = url.searchParams.get("Manga_id");
+const Favorite_id = url.searchParams.get("Favorite_id");
+const previous_url = url.searchParams.get("previous_url");
+
+/* CHECK CURRENT SESSION */
+if (!Astro.cookies.has("session")) {
+  return Astro.redirect("/login/");
+}
+
+// GET ID FROM COOKIES SESSION
+const session_cookies = Astro.cookies.get("session").value;
+const session = JSON.parse(session_cookies);
+const User_id = session.id;
+
+if (Favorite_id != "") {
+  const Favorite_delete = await xata.db.Favorite.delete(`${Favorite_id}`);
+} else if (Favorite_id == "") {
+  const Favorite_create = await xata.db.Favorite.create({
+    User: User_id,
+    Manga: Manga_id,
+  });
+}
+
+return Astro.redirect("/favorite/");
+---

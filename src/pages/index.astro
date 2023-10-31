@@ -2,9 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import MangaCollection from "../components/MangaCollection.astro";
 import "../styles/css/pages-index.css";
+
+/* CHECK CURRENT SESSION */
+if (!Astro.cookies.has("session")) {
+  return Astro.redirect("/login/");
+}
 ---
 
-<Layout title="Beranda">
+<Layout title="Manga">
   <div class="container-index">
     <a href="/" class="reset">Reset Pencarian</a>
     <div class="components-MangaCollection">

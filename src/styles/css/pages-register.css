@@ -1,0 +1,59 @@
+.container-register * {
+  border: 2px solid #1db3dd;
+  border-radius: 10px;
+  box-shadow: 5px 5px #1db3dd;
+}
+
+.container-register form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 20px;
+  background-color: #052129;
+}
+.container-register form input {
+  width: 75%;
+  margin: 10px 0px 10px 0px;
+  padding: 10px;
+  background-color: white;
+}
+.container-register form input[type=submit] {
+  width: 40%;
+  font-size: large;
+  font-weight: 900;
+  color: #052129;
+  background-color: white;
+  border: 2px solid #1db3dd;
+  box-shadow: 5px 5px #1db3dd;
+}
+.container-register form input[type=submit]:hover {
+  cursor: pointer;
+}
+.container-register form input[type=submit]:active {
+  box-shadow: 0px 0px;
+  transform: translate(5px, 5px);
+}
+.container-register form .go-to-register {
+  margin-top: 10px;
+  text-decoration: none;
+  border: none;
+  box-shadow: none;
+}
+.container-register form .go-to-register a {
+  text-decoration: none;
+  color: #1db3dd;
+  border: none;
+  box-shadow: none;
+}
+.container-register form .go-to-register a:hover {
+  text-decoration: underline;
+}
+.container-register #response-message {
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  color: #1db3dd;
+  box-shadow: none;
+}/*# sourceMappingURL=pages-register.css.map */

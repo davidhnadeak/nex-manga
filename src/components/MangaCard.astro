@@ -1,16 +1,34 @@
 ---
 import "../styles/css/components-MangaCard.css";
+import { XataClient } from "../xata";
 
-const { id, img_src, img_alt, title, genres } = Astro.props;
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+
+const { id } = Astro.props;
+
+console.log(id);
+
+const Manga = await xata.db.Manga.filter({
+  id: id,
+}).getMany();
 ---
 
-<a href={`/mangas/${title}`} class="container-MangaCard">
-  <img src={img_src} alt={img_alt} />
-  <h3>{title}</h3>
-  <!-- <div class="container-genres">
-    {genres.map((genre) => <span>{genre}</span>)}
-  </div> -->
-</a>
+{
+  Manga.map((records) => (
+    <a href={`/mangas/${records.title}`} class="container-MangaCard">
+      <img src={records.cover.url} alt={records.cover.name} />
+      <h3>{records.title}</h3>
+      <div class="container-genres">
+        {records.genres.map((genre) => (
+          <span>{genre}</span>
+        ))}
+      </div>
+    </a>
+  ))
+}
 
 <style>
   * {

@@ -1,0 +1,56 @@
+.container-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.container-user .username-logout-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.container-user .username-logout-container h2 {
+  text-align: center;
+}
+.container-user .username-logout-container h2 span {
+  font-size: larger;
+  color: #1db3dd;
+}
+.container-user .username-logout-container .btn-logout {
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  border: 2px solid #010405;
+  border-radius: 5px;
+  box-shadow: 5px 5px #d2f1f9;
+}
+.container-user .username-logout-container .btn-logout:hover {
+  cursor: pointer;
+}
+.container-user .username-logout-container .btn-logout:active {
+  box-shadow: 0px 0px;
+  transform: translate(5px, 5px);
+}
+.container-user .components-Service {
+  width: 100%;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container-user {
+    width: 100%;
+  }
+  .container-user .components-Service {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .container-user .components-Service .container-Service {
+    width: 45%;
+  }
+}/*# sourceMappingURL=pages-user.css.map */

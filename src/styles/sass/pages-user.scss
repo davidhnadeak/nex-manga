@@ -1,0 +1,71 @@
+$text: #d2f1f9;
+$background: #010405;
+$primary: #1ba8d0;
+$secondary: #052129;
+$accent: #1db3dd;
+
+.container-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+ .username-logout-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    h2 {
+        text-align: center;
+    
+        span {
+            font-size: larger;
+            color: $accent;
+        }
+    }
+
+    .btn-logout {
+        padding: 5px 10px 5px 10px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background-color: red;
+        border: 2px solid $background;
+        border-radius: 5px;
+        box-shadow: 5px 5px $text;
+      }
+      
+    .btn-logout:hover {
+        cursor: pointer;
+    }
+      
+    .btn-logout:active {
+        box-shadow: 0px 0px;
+        transform: translate(5px, 5px);
+    }
+ }
+
+ .components-Service {
+    width: 100%;
+ }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container-user {
+        width: 100%;
+  
+        .components-Service {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        
+            .container-Service {
+                width: 45%;
+            }
+         }
+    }
+  }

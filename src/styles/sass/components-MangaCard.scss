@@ -9,24 +9,23 @@ $accent: #1db3dd;
   flex-direction: column;
   align-items: center;
   width: 47%;
-  padding: 10px 0px 10px 0px;
   margin-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-decoration: none;
   color: $text;
   background-color: $secondary;
-  border: 2px solid $accent;
+  border: 2px solid $text;
   border-radius: 10px;
-  box-shadow: 5px 5px $accent;
+  box-shadow: 5px 5px $text;
 
-  img,
-  h3,
-  .container-genres {
+  img, h3, .container-genres {
     width: 85%;
   }
 
   img {
-    border: 2px solid $accent;
-    border-radius: 5px;
+    border: 2px solid $text;
+    border-radius: 7px;
   }
 
   h3 {
@@ -63,5 +62,6 @@ $accent: #1db3dd;
 @media only screen and (min-width: 992px) {
   .container-MangaCard {
     width: 15%;
+    margin-right: 15px;
   }
 }

@@ -16,7 +16,7 @@ $accent: #1db3dd;
     justify-content: space-between;
     align-self: flex-start;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     input[type="text"],
     select,
@@ -28,7 +28,8 @@ $accent: #1db3dd;
     input[type="text"],
     select {
       width: 50%;
-      text-indent: 5px;
+      text-indent: 10px;
+      background-color: white;
       border: 2px solid $background;
       box-shadow: 5px 5px $accent;
     }
@@ -41,7 +42,7 @@ $accent: #1db3dd;
       color: white;
       background-color: $accent;
       border: 2px solid $background;
-      box-shadow: 5px 5px white;
+      box-shadow: 5px 5px $text;
     }
 
     input[type="submit"]:hover {
@@ -52,6 +53,10 @@ $accent: #1db3dd;
       box-shadow: 0px 0px;
       transform: translate(5px, 5px);
     }
+  }
+
+  .components-Service {
+    width: 100%;
   }
 
   .components-MangaCard {
@@ -68,11 +73,21 @@ $accent: #1db3dd;
   .container-MangaCollection {
     
     form {
-      width: 50%;
+      justify-content: start;
+      width: 40%;
 
       input[type="submit"] {
         width: 20%;
+        margin-left: 20px;
       }
+    }
+
+    .components-Service {
+      width: 50%;
+    }
+
+    .components-MangaCard {
+      justify-content: start;
     }
   }
 }

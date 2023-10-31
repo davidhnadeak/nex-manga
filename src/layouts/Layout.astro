@@ -1,7 +1,10 @@
 ---
+import Navbar from "../components/Navbar.astro";
 import "../styles/css/layouts-Layout.css";
 
 const { title } = Astro.props;
+
+const current_url = Astro.url;
 ---
 
 <html lang="en">
@@ -18,7 +21,9 @@ const { title } = Astro.props;
       <div class="container-slot">
         <slot />
       </div>
-      <div class="components-Navbar"></div>
+      <div class="components-Navbar">
+        <Navbar current_url={current_url} />
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,27 @@
+---
+import LayoutLoginRegister from "../layouts/LayoutLoginRegister.astro";
+import "../styles/css/pages-register.css";
+---
+
+<LayoutLoginRegister title="Register">
+  <div class="container-register">
+    <form class="form">
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <input type="submit" value="Register" id="submit" />
+      <p class="go-to-register">
+        Already have an account? <a href="/login/">Login</a>
+      </p>
+    </form>
+    <p id="response-message"></p>
+  </div>
+</LayoutLoginRegister>
+
+<script src="../scripts/register.ts"></script>
+
+<style>
+  * {
+    /* border: 1px solid aqua; */
+  }
+</style>

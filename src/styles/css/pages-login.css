@@ -1,0 +1,59 @@
+.container-login * {
+  border: 2px solid #1db3dd;
+  border-radius: 10px;
+  box-shadow: 5px 5px #1db3dd;
+}
+
+.container-login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 20px;
+  background-color: #052129;
+}
+.container-login form input {
+  width: 75%;
+  margin: 10px 0px 10px 0px;
+  padding: 10px;
+  background-color: white;
+}
+.container-login form input[type=submit] {
+  width: 40%;
+  font-size: large;
+  font-weight: 900;
+  color: #052129;
+  background-color: white;
+  border: 2px solid #1db3dd;
+  box-shadow: 5px 5px #1db3dd;
+}
+.container-login form input[type=submit]:hover {
+  cursor: pointer;
+}
+.container-login form input[type=submit]:active {
+  box-shadow: 0px 0px;
+  transform: translate(5px, 5px);
+}
+.container-login form .go-to-register {
+  margin-top: 10px;
+  text-decoration: none;
+  border: none;
+  box-shadow: none;
+}
+.container-login form .go-to-register a {
+  text-decoration: none;
+  color: #1db3dd;
+  border: none;
+  box-shadow: none;
+}
+.container-login form .go-to-register a:hover {
+  text-decoration: underline;
+}
+.container-login #response-message {
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  color: #1db3dd;
+  box-shadow: none;
+}/*# sourceMappingURL=pages-login.css.map */

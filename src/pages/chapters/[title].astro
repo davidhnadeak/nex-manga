@@ -1,8 +1,12 @@
 ---
 import LayoutChapter from "../../layouts/LayoutChapter.astro";
 import "../../styles/css/pages-chapters-[title].css";
-
 import { XataClient } from "../../xata";
+
+/* CHECK CURRENT SESSION */
+if (!Astro.cookies.has("session")) {
+  return Astro.redirect("/login/");
+}
 
 export async function getStaticPaths() {
   // Chapter

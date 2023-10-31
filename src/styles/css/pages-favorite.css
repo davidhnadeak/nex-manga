@@ -1,0 +1,26 @@
+.container-favorite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.container-favorite .components-Service {
+  width: 100%;
+}
+.container-favorite .components-MangaCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container-favorite .components-Service {
+    width: 50%;
+  }
+  .container-favorite .components-MangaCard {
+    justify-content: start;
+  }
+}/*# sourceMappingURL=pages-favorite.css.map */

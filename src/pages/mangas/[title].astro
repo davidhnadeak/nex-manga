@@ -1,8 +1,24 @@
 ---
 import LayoutManga from "../../layouts/LayoutManga.astro";
 import "../../styles/css/pages-mangas-[title].css";
-
 import { XataClient } from "../../xata";
+
+const url = Astro.url;
+
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+
+/* CHECK CURRENT SESSION */
+if (!Astro.cookies.has("session")) {
+  return Astro.redirect("/login/");
+}
+
+// GET ID FROM COOKIES SESSION
+const session_cookies = Astro.cookies.get("session").value;
+const session = JSON.parse(session_cookies);
+const user_id = session.id;
 
 export async function getStaticPaths() {
   // Manga
@@ -24,12 +40,31 @@ export async function getStaticPaths() {
 
 const Manga = Astro.props;
 
-// Chapter
-const xata = new XataClient({
-  apiKey: import.meta.env.XATA_API_KEY,
-  branch: import.meta.env.XATA_BRANCH,
-});
+// FAVORITE
+const Favorite = await xata.db.Favorite.filter({
+  User: {
+    id: user_id,
+  },
+  Manga: {
+    id: Manga.id,
+  },
+}).getMany();
 
+let Favorite_id;
+let btn_text;
+let btn_favorite_color;
+
+if (Favorite.length > 0) {
+  Favorite_id = Favorite[0].id;
+  btn_text = "Favorit";
+  btn_favorite_color = "#1db3dd";
+} else {
+  Favorite_id = "";
+  btn_text = "Favorit";
+  btn_favorite_color = "#d2f1f9";
+}
+
+// CHAPTER
 const Chapter = await xata.db.Chapter.filter({
   Manga: Manga.id,
 }).getMany();
@@ -37,35 +72,58 @@ const Chapter = await xata.db.Chapter.filter({
 
 <LayoutManga title={Manga.title}>
   <div class="container-manga">
-    <img src={Manga.cover.url} alt={Manga.title} />
+    <div class="cover-favorite-container">
+      <img src={Manga.cover.url} alt={Manga.title} />
+      <a
+        href=`/action-favorite?Manga_id=${Manga.id}&Favorite_id=${Favorite_id}&previous_url=${url}`
+        class="btn-favorite"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 24 24"
+          ><path
+            fill="#d2f1f9"
+            d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3l7 3V5c0-1.1-.9-2-2-2z"
+          ></path></svg
+        >
+        <p>{btn_text}</p>
+      </a>
+    </div>
 
     <h1>{Manga.title}</h1>
 
-    <!-- <table>
-      <tr>
-        <td>Genre</td>
-        <td style="padding-right: 5px;">:</td>
-        <td class="container-genres"
-          >{Manga.genres.map((genre) => <p class="genre">{genre}</p>)}</td
-        >
-      </tr>
-      <tr>
-        <td>Penulis</td>
-        <td>:</td>
-        <td><b>{Manga.author}</b></td>
-      </tr>
-    </table> -->
+    <div class="genres-container">
+      <p class="genre-title">Genre</p>
+      <p class="bisection-sign">:</p>
+      <div class="genres">
+        {Manga.genres.map((genre) => <p class="genre">{genre}</p>)}
+      </div>
+    </div>
 
-    <p>Sinopsis</p>
-    <p class="synopsis">{Manga.synopsis}</p>
+    <div class="author-container">
+      <p class="author-title">Author</p>
+      <p class="bisection-sign">:</p>
+      <div class="author">
+        {Manga.author}
+      </div>
+    </div>
+
+    <div class="writer-container"></div>
+
+    <div class="synopsis-container">
+      <p>Sinopsis</p>
+      <p class="synopsis">{Manga.synopsis}</p>
+    </div>
 
     <div class="container-chapter">
       {
         Chapter.map((records) => (
           <a href={`/chapters/${records.title}`}>
-            <p>
+            <h3>
               {records.number}. {records.title}
-            </p>
+            </h3>
             <p class="container-column-publishdate">
               <span>{records.volume}</span>
               <span>{records.publishdate.toLocaleDateString()}</span>
@@ -77,7 +135,7 @@ const Chapter = await xata.db.Chapter.filter({
   </div>
 </LayoutManga>
 
-<style>
+<style define:vars={{ btn_favorite_color }}>
   * {
     /* border: 1px solid aqua; */
   }

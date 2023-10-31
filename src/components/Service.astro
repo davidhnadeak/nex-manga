@@ -1,0 +1,16 @@
+---
+import "../styles/css/components-Service.css";
+
+const { img_src, img_alt, text } = Astro.props;
+---
+
+<div class="container-Service">
+  <img src={img_src} alt={img_alt} />
+  <h2>{text}</h2>
+</div>
+
+<style>
+    * {
+        /* border: 1px solid yellow; */
+    }
+</style>

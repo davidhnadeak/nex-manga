@@ -1,0 +1,28 @@
+---
+import "../styles/css/layouts-LayoutLoginRegister.css";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="container-LayoutLoginRegister">
+      <h1>{title}</h1>
+      <div class="container-slot">
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  * {
+    /* border: 1px solid white; */
+  }
+</style>

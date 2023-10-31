@@ -21,7 +21,7 @@ body {
 .container-Layout h1 {
   width: 100%;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   text-align: center;
   background-color: #052129;
   border: 2px solid #1db3dd;
@@ -32,10 +32,24 @@ body {
 .container-Layout .components-Navbar {
   width: 100%;
 }
+.container-Layout .container-slot {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.container-Layout .components-Navbar {
+  position: sticky;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .container-Layout {
     width: 80%;
+  }
+  .container-Layout h1, .container-Layout .components-Navbar {
+    width: 50%;
   }
 }/*# sourceMappingURL=layouts-Layout.css.map */

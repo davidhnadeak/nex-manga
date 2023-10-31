@@ -1,0 +1,40 @@
+$text: #d2f1f9;
+$background: #010304;
+$primary: #1ba8d0;
+$secondary: #052129;
+$accent: #1db3dd;
+
+.container-Navbar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+    background-color: $secondary;
+    border: 3px solid $accent;
+    border-radius: 10px;
+    box-shadow: 5px 5px $accent;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: bold;
+        text-decoration: none;
+        color: $text;
+
+        svg {
+            
+            path {
+                fill: $text;
+            }
+        }
+    }
+
+    a.active {
+        color: $accent;
+    }
+    
+    a.active svg path {
+        fill: $accent;
+    }
+}

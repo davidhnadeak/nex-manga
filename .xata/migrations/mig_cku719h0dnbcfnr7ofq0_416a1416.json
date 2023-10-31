@@ -1,0 +1,13 @@
+{
+  "id": "mig_cku719h0dnbcfnr7ofq0",
+  "parentID": "mig_cku4q323edhikbl7fav0",
+  "checksum": "1:416a1416cdef6e9153498205db23ed464d86fae3db5fa6acb6c9b9c24828c51d",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "Favorite",
+        "oldName": "Bookmark"
+      }
+    }
+  ]
+}

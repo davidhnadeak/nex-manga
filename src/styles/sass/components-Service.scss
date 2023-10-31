@@ -1,0 +1,27 @@
+$text: #d2f1f9;
+$background: #010405;
+$primary: #1ba8d0;
+$secondary: #052129;
+$accent: #1db3dd;
+
+.container-Service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+    margin-bottom: 20px;
+    border: 2px solid $text;
+    border-radius: 10px;
+    box-shadow: 5px 5px $text;
+    
+    img {
+        width: 90%;
+    }
+
+    h2 {
+        width: 90%;
+        margin: 10px 0px 10px 0px;
+        text-align: center;
+    }
+}

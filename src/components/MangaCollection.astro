@@ -1,7 +1,7 @@
 ---
 import MangaCard from "./MangaCard.astro";
+import Service from "./Service.astro";
 import "../styles/css/components-MangaCollection.css";
-
 import { XataClient } from "../xata";
 
 const xata = new XataClient({
@@ -15,11 +15,19 @@ const genre = Astro.url.searchParams.get("genre")! || "";
 let Manga = null;
 
 if (search) {
-  // Manga = await xata.db.Manga.search(search, { fuzziness: 2 });
+  Manga = await xata.db.Manga.search(search, { fuzziness: 2 });
 
-  Manga = await xata.db.Manga.filter({
-    title: search,
-  }).getMany();
+  // const Manga = await xata.search.byTable(search, {
+  //   tables: [{ table: "User" }],
+  //   fuzziness: 2,
+  //   prefix: "phrase",
+  // });
+
+  // Manga = await xata.db.Manga.filter({
+  //   title: search,
+  // }).getMany();
+
+  // console.log(Manga);
 } else if (genre) {
   Manga = await xata.db.Manga.filter({
     genres: {
@@ -41,7 +49,13 @@ MangaGenres.forEach((record) => {
 
 <div class="container-MangaCollection">
   <form action="/">
-    <input type="text" name="search" value={search} placeholder="Pilih Judul" required />
+    <input
+      type="text"
+      name="search"
+      value={search}
+      placeholder="Pilih Judul"
+      required
+    />
     <input type="submit" value="Cari Judul" />
   </form>
 
@@ -65,22 +79,18 @@ MangaGenres.forEach((record) => {
 
   {
     Manga.length === 0 && (
-      <h3 style="margin: 10px 0px 10px 0px;">TIdak dapat menemukan Manga</h3>
+      <div class="components-Service">
+        <Service
+          img_src="/images/failed_search.svg"
+          img_alt="Failed Search"
+          text="Manga tidak dapat ditemukan"
+        />
+      </div>
     )
   }
 
   <div class="components-MangaCard">
-    {
-      Manga.map((records) => (
-        <MangaCard
-          id={records.id}
-          img_src={records.cover.url}
-          img_alt={records.title}
-          title={records.title}
-          genres={records.genres}
-        />
-      ))
-    }
+    {Manga.map((records) => <MangaCard id={records.id} />)}
   </div>
 </div>
 
