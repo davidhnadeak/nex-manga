@@ -30,6 +30,7 @@
   justify-content: space-around;
 }
 .container-MangaCard .container-genres span {
+  margin-bottom: 5px;
   padding: 0px 5px 0px 5px;
   font-size: small;
   font-weight: bold;
