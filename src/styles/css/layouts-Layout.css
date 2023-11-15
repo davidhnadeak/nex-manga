@@ -35,13 +35,13 @@ body {
 .container-Layout .container-slot {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
 }
 .container-Layout .components-Navbar {
   position: sticky;
   bottom: 20px;
   display: flex;
   justify-content: center;
+  margin-top: 250px;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

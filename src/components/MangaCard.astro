@@ -20,7 +20,11 @@ const Manga = await xata.db.Manga.filter({
   Manga.map((records) => (
     <a href={`/mangas/${records.title}`} class="container-MangaCard">
       <img src={records.cover.url} alt={records.cover.name} />
-      <h3>{records.title}</h3>
+      <h3>
+        {records.title.length > 12
+          ? `${records.title.substring(0, 12)}...`
+          : records.title}
+      </h3>
       <div class="container-genres">
         {records.genres.map((genre) => (
           <span>{genre}</span>

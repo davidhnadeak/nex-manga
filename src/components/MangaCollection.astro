@@ -16,18 +16,6 @@ let Manga = null;
 
 if (search) {
   Manga = await xata.db.Manga.search(search, { fuzziness: 2 });
-
-  // const Manga = await xata.search.byTable(search, {
-  //   tables: [{ table: "User" }],
-  //   fuzziness: 2,
-  //   prefix: "phrase",
-  // });
-
-  // Manga = await xata.db.Manga.filter({
-  //   title: search,
-  // }).getMany();
-
-  // console.log(Manga);
 } else if (genre) {
   Manga = await xata.db.Manga.filter({
     genres: {

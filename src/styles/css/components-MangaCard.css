@@ -1,6 +1,7 @@
 .container-MangaCard {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 47%;
   margin-bottom: 15px;
@@ -17,6 +18,7 @@
   width: 85%;
 }
 .container-MangaCard img {
+  height: 200px;
   border: 2px solid #d2f1f9;
   border-radius: 7px;
 }

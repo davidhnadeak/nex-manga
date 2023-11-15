@@ -7,6 +7,7 @@ $accent: #1db3dd;
 .container-MangaCard {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 47%;
   margin-bottom: 15px;
@@ -24,6 +25,7 @@ $accent: #1db3dd;
   }
 
   img {
+    height: 200px;
     border: 2px solid $text;
     border-radius: 7px;
   }
