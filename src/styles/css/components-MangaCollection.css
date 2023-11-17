@@ -1,7 +1,6 @@
 .container-MangaCollection {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
@@ -57,13 +56,17 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .container-MangaCollection form {
-    width: 30%;
+    justify-content: start;
+    width: 40%;
   }
-  .container-MangaCollection form input[type=text],
-  .container-MangaCollection form select {
-    width: 60%;
+  .container-MangaCollection form input[type=submit] {
+    width: 20%;
+    margin-left: 20px;
   }
   .container-MangaCollection .components-Service {
     width: 50%;
+  }
+  .container-MangaCollection .components-MangaCard {
+    justify-content: start;
   }
 }/*# sourceMappingURL=components-MangaCollection.css.map */
