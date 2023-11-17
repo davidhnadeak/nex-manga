@@ -1,4 +1,6 @@
 ---
+import LayoutLoader from "../layouts/LayoutLoader.astro";
+import "../styles/css/pages-action-favorite.css";
 import { XataClient } from "../xata";
 
 const xata = new XataClient({
@@ -29,6 +31,6 @@ if (Favorite_id != "") {
     Manga: Manga_id,
   });
 }
-
-return Astro.redirect("/favorite/");
 ---
+
+<LayoutLoader />

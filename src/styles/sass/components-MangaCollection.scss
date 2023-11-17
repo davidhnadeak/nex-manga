@@ -7,6 +7,7 @@ $accent: #1db3dd;
 .container-MangaCollection {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 
@@ -72,21 +73,16 @@ $accent: #1db3dd;
   .container-MangaCollection {
     
     form {
-      justify-content: start;
-      width: 40%;
+      width: 30%;
 
-      input[type="submit"] {
-        width: 20%;
-        margin-left: 20px;
+      input[type="text"],
+      select {
+        width: 60%;
       }
     }
 
     .components-Service {
       width: 50%;
-    }
-
-    .components-MangaCard {
-      justify-content: start;
     }
   }
 }

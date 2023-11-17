@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+$text: #d2f1f9;
+$background: #010405;
+$primary: #1ba8d0;
+$secondary: #052129;
+$accent: #1db3dd;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  color: $text;
+  background-color: $background;
+}
