@@ -1,1 +1,1 @@
-{"version":3,"sources":["../sass/pages-favorite.scss","pages-favorite.css"],"names":[],"mappings":"AAMA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,WAAA;ACLF;ADOE;EACE,WAAA;ACLJ;ADQE;EACE,aAAA;EACA,eAAA;EACA,8BAAA;EACA,WAAA;ACNJ;;ADUA,mDAAA;AACA;EAGI;IACE,UAAA;ECTJ;EDYE;IACE,sBAAA;ECVJ;AACF","file":"pages-favorite.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/pages-favorite.scss"],"names":[],"mappings":"AAMA;EACE;EACA;EACA;EACA;;AAEA;EACE;;AAGF;EACE;EACA;EACA;EACA;;;AAIJ;AACA;EAGI;IACE;;EAGF;IACE","file":"pages-favorite.css"}
