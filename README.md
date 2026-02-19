@@ -1,3 +1,13 @@
+# Nex Manga
+
+Berikut tampilan antarmuka aplikasi Nex Manga di perangkat desktop dan mobile:
+
+### Desktop View
+![Desktop View](images/Desktop.png)
+
+### Mobile View
+![Mobile View](images/Mobile.png)
+
 # Astro Starter Kit: Minimal
 
 ```sh
